@@ -1,0 +1,14 @@
+{
+  "name": "adaptivdocumentationparser",
+  "description": "Parses Adaptiv Documentation using natural language processing",
+  "version": "0.0.1",
+  "private": true,
+  "license": "",
+  "author": "ohhsj",
+  "engines": {
+    "node": ">6.9.5"
+  },
+  "dependencies": {
+    "restify": "4.3.0"
+  }
+}

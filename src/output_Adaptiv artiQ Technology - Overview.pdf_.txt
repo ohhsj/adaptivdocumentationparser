@@ -1,0 +1,216 @@
+2016.2 
+Overview 
+Copyright Information 
+----------------Page (0) Break----------------
+Adaptiv artiQ Technology 2 Overview 
+Table of Contents 
+Chapter 1 About this Guide ....................................................................................................... 3 
+How this Guide is Organised ................................................................................................................................... 3 
+Abbreviations Used in this Guide ............................................................................................................................ 3 
+Intended Audience ................................................................................................................................................... 3 
+References .............................................................................................................................................................. 4 
+Chapter 2 Introduction ............................................................................................................... 5 
+Overview .................................................................................................................................................................. 5 
+Features ................................................................................................................................................................... 5 
+Chapter 3 Key Concepts ............................................................................................................ 6 
+Multiple Users .......................................................................................................................................................... 6 
+Simultaneous Actions .............................................................................................................................................. 6 
+Data Sources ........................................................................................................................................................... 6 
+Flexibility .................................................................................................................................................................. 7 
+Chapter 4 Sample artiQ Systems .............................................................................................. 8 
+Sample System 1 ..................................................................................................................................................... 8 
+Sample System 2 ..................................................................................................................................................... 8 
+Sample System 3 ..................................................................................................................................................... 9 
+----------------Page (1) Break----------------
+Adaptiv artiQ Technology 3 Overview 
+Chapter 1 
+About this Guide 
+This guide provides a high-level overview of the Adaptiv artiQ technology (referred to as 
+artiQ in this document). 
+This chapter discusses the following topics: 
+How this Guide is Organised 
+Abbreviations Used in this Guide 
+Intended Audience 
+References 
+How this Guide is Organised 
+This guide is organised as follows: 
+Chapter Description 
+About this Guide Introduces you to this guide 
+Introduction Introduces you to artiQ 
+Key Concepts Explains key concepts related to artiQ 
+Sample artiQ Systems Provides few samples explaining various methods of 
+implementing artiQ on your system 
+Table 1:  Content Outline 
+Abbreviations Used in this Guide 
+The following table describes the abbreviations used in this document. 
+Abbreviation/Acronym Description 
+ARC Adaptiv RiskCube 
+EOD End of Day 
+OLAP OnLine Analytical Processing 
+RAM Random Access Memory 
+SSAS SQL Server Analysis Services 
+Table 2:  Abbreviations and Acronyms 
+Intended Audience 
+This guide is intended for all the users of artiQ. 
+----------------Page (2) Break----------------
+Adaptiv artiQ Technology 4 Overview 
+References 
+Ref Title Filename Version 
+R1 artiQ Installation Guide 2016.2 Adaptiv artiQ Technology 
+- Installation Guide.pdf 
+2016.2 
+R2 artiQ Architecture Guide 2016.2 Adaptiv artiQ Technology 
+- Architecture Guide.pdf 
+2016.2 
+R3 artiQ Hardware Sizing 
+Guide 
+2016.2 Adaptiv artiQ Technology 
+- Hardware Sizing Guide.pdf 
+2016.2 
+R4 artiQ RiskCube Integration 
+Guide 
+2016.2 Adaptiv artiQ Technology 
+- RiskCube Integration Guide.pdf 
+2016.2 
+Table 3:  References 
+----------------Page (3) Break----------------
+ 
+Adaptiv artiQ Technology 5 Overview 
+Chapter 2 
+Introduction 
+This chapter introduces you to artiQ. It covers the following topics: 
+ Overview 
+ Features 
+Overview 
+artiQ is a risk-focussed, high-performance replacement for Microsoft SQL Server Analysis 
+Services (SSAS). It is an OnLine Analytical Processing (OLAP), data mining and reporting 
+technology, similar to Microsoft SSAS.   
+artiQ supports the major OLAP methods of connection. This means that Microsoft Excel 
+can be used to query, slice-and-dice, generate reports and drilldown into the massive 
+amounts of data that can be hosted by artiQ. 
+For information on how to install artiQ, refer to the artiQ Installation Guide (R1). 
+Features 
+artiQ was created after many years of working with Microsoft SSAS at large financial 
+institutions.   
+Microsoft SSAS is a generic product that can serve the needs of many small to large 
+businesses.  However,  a  more  performance-targeted technology can  help to  achieve 
+closer to real-time updates with a large number of users. 
+The following features of artiQ make it suit your needs for analytical processing, data 
+mining and reporting: 
+ It responds to data-mining queries fast because all the data is served straight from 
+Random Access Memory (RAM), rather than a disc or a combination of RAM and 
+disc. 
+ It is  inherently  designed  to  remain responsive  to  multiple  users. For  more 
+information, refer to the section Multiple Users. 
+ It scales well and can take advantage of big hardware with a large number of 
+cores. 
+ It can handle the volumes and types of data that the financial industry generates 
+by using vectorised values. 
+For a deeper insight into the architecture of artiQ, refer to the artiQ Architecture Guide 
+(R2). 
+  
+----------------Page (4) Break----------------
+ 
+Adaptiv artiQ Technology 6 Overview 
+Chapter 3 
+Key Concepts 
+This chapter explains the key concepts related to artiQ. It covers the following topics: 
+ Multiple Users 
+ Simultaneous Actions 
+ Data Sources 
+ Flexibility 
+Multiple Users 
+artiQ responds to queries from multiple users simultaneously. The core of artiQ makes use 
+of multiple processors to carry out queries in parallel, on the data that is held in the 
+memory. 
+Not only can artiQ answer queries from multiple users, it also supports What-If style 
+analysis,  where a user  can  see the results  of  potential  changes  in  a  sandboxed 
+environment, without affecting the other users. 
+Simultaneous Actions 
+A typical artiQ environment will not just have multiple users querying static data. The data 
+itself is likely to be updated intra-day with corrections and at the end of day (EOD) with 
+additional data. 
+Microsoft SSAS allows updates  and corrections  to  data, but  being disc-based, these 
+updates can cause hiccups and interruptions to other users. This is not the case with 
+artiQ, which is super-smooth at changing data. During tests, the users were completely 
+unaware that corrections and updates had even occurred. 
+artiQ achieves this smoothness by loading changes into the memory and applying them at 
+once, in a transactional manner. This is rapid and does not interfere with the other users, 
+allowing them to carry on uninterrupted. 
+Data Sources 
+artiQ can host data from the typical sources.  
+ It can use a staging database when acting in its role as a performance boost to a 
+Microsoft SSAS system.  
+ It can use the disc-based files if it needs to be used in a stand-alone environment.   
+ It can also be extended, using the software plug-ins so that it can use those data 
+sources that are not yet supported.   
+----------------Page (5) Break----------------
+ 
+Adaptiv artiQ Technology 7 Overview 
+Example: An example of such a software plugin would be loading files from an 
+Amazon S3 cloud. 
+Flexibility 
+Each artiQ service can support multiple cubes, with each cube containing data unrelated 
+to the other cube. Each cube can hold data spanning a number of days. Alternatively, 
+each artiQ service could contain just one cube with just one day of data.  
+artiQ can also be used in conjunction with Microsoft SSAS, so that the recent data is 
+hosted by artiQ for fast and frequent access, but the older, historical data is maintained by 
+Microsoft SSAS for infrequent reporting. 
+Therefore, artiQ is flexible to the needs of the users and as per the available hardware. 
+For more information about hardware-related requirements for artiQ, refer to the artiQ 
+Hardware Sizing Guide (R3). 
+----------------Page (6) Break----------------
+ 
+Adaptiv artiQ Technology 8 Overview 
+Chapter 4 
+Sample artiQ Systems 
+This chapter provides few samples explaining various methods of implementing artiQ on 
+your system. 
+Sample System 1 
+The following sample system illustrates a simple configuration where artiQ hosts the data 
+from a file or files, with Microsoft Excel being used for data mining. 
+ 
+Figure 1 Sample System 1 
+Sample System 2 
+The following sample system illustrates artiQ using an Adaptiv RiskCube (ARC) staging 
+database with either Microsoft Excel or ARC being used for data mining. This is a fairly 
+typical configuration. 
+ 
+Figure 2 Sample System 2 
+----------------Page (7) Break----------------
+ 
+Adaptiv artiQ Technology 9 Overview 
+For details on how to integrate artiQ with ARC, refer to the artiQ RiskCube Integration 
+Guide (R4). 
+Sample System 3 
+The following sample system illustrates a much larger system than the ones shown in the 
+previous samples. In this sample, artiQ provides high-performance data mining for recent 
+information, for example T-1 to T-10.  
+Microsoft SSAS is used to make older information available, for example T-11 and older, 
+but offers a slower access for less frequent reporting. 
+ 
+Figure 3 Sample System 3 
+ 
+ 
+ 
+----------------Page (8) Break----------------
+ 
+Adaptiv artiQ Technology 10 Overview 
+Copyright, Confidentiality, and Disclaimer 
+COPYRIGHT  ©  2016  Fidelity  National  Information  Services, Inc.  This  document  contains  confidential  and  proprietary 
+information of Fidelity Information Services, LLC and/or its affiliates and subsidiaries (collectively “FIS”). In limited circumstances 
+this document may be copied and/or distributed to an FIS client and its employees on a “need to know” basis in order to fulfil 
+their  responsibilities.  Any  further  copying,  reproduction,  or  distribution  without  express  written  consent  of  FIS  is  strictly 
+prohibited. All rights reserved worldwide. 
+CONFIDENTIALITY STATEMENT: This document contains information that is confidential or proprietary to FIS (or its direct and 
+indirect subsidiaries). By accepting this document, you agree that: (1) if there is any pre-existing contract containing disclosure 
+and use restrictions between your company and FIS, you and your company will use this information in reliance on and subject 
+to the terms of any such pre-existing contract; or (2) if there is no contractual relationship between you or your company and 
+FIS, you and your Company agree to protect this information and not reproduce, disclose or use the information in any way, 
+except as may be required by law. 
+DISCLAIMER: The screens and illustrations are representative of those created by the software, and are not always exact 
+copies of what appears on the computer monitor. Companies, names and data used in examples herein are fictitious unless 
+otherwise noted. The material in this document is for information only, and is subject to change without notice. FIS reserves the 
+right to make changes in the product design and installation software without reservation and without notice to users. 
+Last updated 02 August 2016 
+----------------Page (9) Break----------------
