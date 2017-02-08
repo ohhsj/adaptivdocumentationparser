@@ -1,4 +1,5 @@
 /**
+ * This is a simple POC to convert PDF to text
  */
 
 'use strict';
